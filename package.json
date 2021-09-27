@@ -17,13 +17,24 @@
   },
   "homepage": "https://github.com/anupama58/test-project-api#readme",
   "dependencies": {
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "apollo-link": "^1.2.14",
+    "apollo-link-rest": "^0.8.0-beta.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "graphql": "^14.7.0",
+    "graphql-anywhere": "^4.2.7",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.0",
     "nodemon": "^2.0.12",
+    "qs": "^6.10.1",
+    "react-apollo": "^3.1.5",
     "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
   }
 }
