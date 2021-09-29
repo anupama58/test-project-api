@@ -77,7 +77,13 @@ function login(req, res) {
                             message: "Authentication Successfull!",
                             token: token
                         }
-                        res.send({ user: data });
+                        // res.status(200).json({
+                        //     success: {
+                        //         message: 'Authentication Successfull!',
+                        //         token: token
+                        //     }
+                        // });
+                        res.send({ userLogin: data });
                     });
                 } else {
                     res.status(500).json({
