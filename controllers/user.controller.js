@@ -67,6 +67,8 @@ function login(req, res) {
                 message: "Invalid credentials",
             });
         } else {
+            console.log(req.body.password);
+            console.log(user.password);
             bcryptjs.compare(req.body.password, user.password, function (err, result) {
                 if (result) {
                     const token = jwt.sign({
@@ -125,21 +127,21 @@ function index(req, res) {
 }
 
 function update(req, res) {
+    console.log("req",req);
     const id = req.params.id;
+    console.log("id",id);
     const updateUser = {
         firstName: req.body.firstname,
         lastName: req.body.lastname,
-        userName: req.body.username,
-        emailId: req.body.email,
         mobileNo: req.body.mobile
     }
     console.log(updateUser);
     models.Users.update(updateUser, { where: { id: id } }).then(result => {
         const data = {
             message: "User profile update successfully",
-            result: result
+            result: result[0]
         }
-        res.send({ user: data });
+        res.send({ updateUser: data });
     }).catch(error => {
         res.status(500).json({ 
             message: "Something went wrong!",
